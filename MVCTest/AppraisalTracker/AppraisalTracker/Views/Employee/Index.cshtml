@@ -1,0 +1,64 @@
+﻿@model IEnumerable<AppraisalTracker.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<section class="employee-section py-5">
+    <div class="container">
+        <p>
+            @Html.ActionLink("Create New", "Create",null, new { @class = "btn btn-outline-primary" })
+        </p>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EmpName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Contact)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.JoinDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Salary)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TotalExperience)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AppraisalDate)
+                    </th>
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EmpName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Contact)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.JoinDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Salary)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalExperience)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AppraisalDate)
+                        </td>
+                    </tr>
+                </tbody>
+            }
+        </table>
+    </div>
+</section>

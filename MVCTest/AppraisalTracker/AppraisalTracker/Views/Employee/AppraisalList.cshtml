@@ -1,0 +1,56 @@
+﻿@model IEnumerable<AppraisalTracker.Models.Appraisal>
+
+@{
+    ViewBag.Title = "AppraisalList";
+}
+
+<div class="appraisal-list py-5">
+    <div class="container">
+        <h2 class="mb-4">Appraisal list</h2>
+        @using (Html.BeginForm("AppraisalList", "Employee", FormMethod.Get))
+        {
+            <div class="form-group d-flex align-items-center">
+                @Html.TextBox("empName","", new { @class = "form-control w-25 mr-4" })
+                <input type="submit" value="Search" class="btn btn-secondary" />
+            </div>
+        }
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EmpName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.OLDSalary)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NewSalary)
+                    </th>
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EmpName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OLDSalary)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NewSalary)
+                        </td>
+                    </tr>
+                </tbody>
+            }
+        </table>
+    </div>
+</div>

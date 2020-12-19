@@ -1,0 +1,34 @@
+﻿@model AppraisalTracker.Models.Admin
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<section class="login-section">
+    <div class="container">
+        <div class="p-4 shadow rounded">
+            <h2 class="text-center">Login</h2>
+            @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Username)
+                        @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Username,"", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Password)
+                        @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Password, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group mt-4 text-center">
+                        <input type="submit" value="Log in" class="btn btn-primary" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+

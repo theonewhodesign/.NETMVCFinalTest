@@ -1,0 +1,29 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body-content {
+    min-height: calc(100vh - 112px);
+}
+
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 112px);
+}
+
+    .login-section .container {
+        max-width: 500px;
+    }
+
+    .create-section .container {
+        max-width: 700px;
+    }
+
+
+.appraisal-section .container {
+    max-width: 600px;
+}
